@@ -16,145 +16,158 @@
         .nav-link { position: relative; padding: 0.5rem 0; }
         .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #2563eb; transition: width 0.3s; }
         .nav-link:hover::after { width: 100%; }
+        .gradient-text { background: linear-gradient(90deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="text-slate-900">
+<body class="text-slate-900 leading-relaxed">
 
     <nav class="fixed top-0 w-full z-50 glass border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <span class="font-black text-xl tracking-tighter text-blue-600">MINSEO.P</span>
             <div class="flex gap-4 md:gap-8 text-xs md:text-sm font-bold text-slate-500 overflow-x-auto whitespace-nowrap pb-2 md:pb-0">
-                <a href="#about" class="nav-link text-slate-800">PROFILE</a>
-                <a href="#edu" class="nav-link">EDUCATION</a>
-                <a href="#skill" class="nav-link">CAPABILITY</a>
-                <a href="#work" class="nav-link">EXPERIENCE</a>
+                <a href="#about" class="nav-link text-slate-800">ABOUT</a>
+                <a href="#activities" class="nav-link">ACTIVITIES</a>
+                <a href="#projects" class="nav-link">PROJECTS</a>
+                <a href="#special" class="nav-link">SPECIAL</a>
             </div>
         </div>
     </nav>
 
     <main class="max-w-6xl mx-auto px-6 pt-32 pb-20 space-y-8">
         
-        <section id="about" class="bento-card flex flex-col md:flex-row items-center md:items-start gap-10" data-aos="fade-up">
+        <section class="bento-card flex flex-col md:flex-row items-center md:items-start gap-10" data-aos="fade-up">
             <div class="w-48 h-60 md:w-64 md:h-80 bg-slate-200 rounded-3xl overflow-hidden shadow-xl flex-shrink-0">
                 <img src="your-photo.jpeg" alt="박민서" class="w-full h-full object-cover">
             </div>
             <div class="flex-1 w-full text-left">
-                <h2 class="text-blue-600 font-bold tracking-widest text-sm mb-2">INTERNATIONAL STUDIES & WEB CONTENT</h2>
+                <h2 class="text-blue-600 font-bold tracking-widest text-sm mb-2">INTERNATIONAL STUDIES & WEB CREATOR</h2>
                 <h1 class="text-5xl md:text-6xl font-black mb-6 tracking-tighter text-slate-900">박민서</h1>
-                <div class="space-y-3 text-slate-500 font-medium border-t pt-6">
-                    <p class="flex items-center gap-3"><span class="w-24 text-slate-400 text-xs font-bold uppercase">Birth</span> 2004. 08. 23</p>
-                    <p class="flex items-center gap-3"><span class="w-24 text-slate-400 text-xs font-bold uppercase">Contact</span> 010-XXXX-XXXX</p>
-                    <p class="flex items-center gap-3"><span class="w-24 text-slate-400 text-xs font-bold uppercase">Email</span> your-email@gmail.com</p>
-                    <p class="flex items-center gap-3"><span class="w-24 text-slate-400 text-xs font-bold uppercase">Github</span> <a href="https://github.com/heheiiiiii" target="_blank" class="text-blue-600 hover:underline">@heheiiiiii</a></p>
-                    <p class="flex items-center gap-3"><span class="w-24 text-slate-400 text-xs font-bold uppercase">Xiaohongshu</span> <a href="#" target="_blank" class="text-red-500 hover:underline">@민서님의샤오홍슈ID</a></p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 text-slate-500 font-medium border-t pt-6">
+                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Birth</span> 2004. 08. 23</p>
+                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Contact</span> 010-XXXX-XXXX</p>
+                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Email</span> your-email@gmail.com</p>
+                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Location</span> Seoul / Gyeonggi-do</p>
+                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Github</span> <a href="https://github.com/heheiiiiii" target="_blank" class="text-blue-600 hover:underline">@heheiiiiii</a></p>
+                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Blog</span> <a href="#" target="_blank" class="text-blue-600 hover:underline">@민서님의블로그</a></p>
+                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Xiaohongshu</span> <a href="#" target="_blank" class="text-red-500 hover:underline">@샤오홍슈ID</a></p>
                 </div>
             </div>
         </section>
 
+        <section id="about" class="bento-card border-l-8 border-l-blue-600" data-aos="fade-up">
+            <h3 class="text-sm font-black text-slate-400 mb-2 tracking-widest uppercase">Introduce</h3>
+            <p class="text-2xl md:text-3xl font-bold leading-snug text-slate-800 mb-4">
+                "국제학의 시각으로 세상을 읽고, <span class="gradient-text">기술의 언어로 가치를 구축합니다.</span>"
+            </p>
+            <p class="text-slate-600 leading-relaxed text-lg">
+                단순히 언어를 배우는 것을 넘어, 서로 다른 문화를 연결하고 정보를 효율적으로 전달하는 기획자를 꿈꿉니다. 
+                사람들의 니즈를 파악해 아이디어를 내고, 이를 웹사이트나 콘텐츠라는 실체 있는 결과물로 만들어내는 과정에 가장 큰 흥미를 느낍니다. 
+                글로벌 마인드와 트렌디한 디지털 툴 활용 능력을 바탕으로 언제나 창의적인 솔루션을 제안하겠습니다.
+            </p>
+        </section>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <section id="edu" class="md:col-span-1 bento-card space-y-8" data-aos="fade-up">
-                <div>
-                    <h3 class="text-xl font-black flex items-center gap-2 mb-6">
-                        <span class="w-2 h-6 bg-blue-600 rounded-full"></span> EDUCATION
-                    </h3>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-bold text-slate-800">한국외국어대학교</h4>
-                            <p class="text-blue-600 text-sm font-semibold">국제학부 (IS) 재학</p>
-                            <p class="text-[11px] text-slate-400 mt-1">2023.03 - PRESENT</p>
-                        </div>
-                        <div class="border-t pt-4">
-                            <h4 class="font-bold text-slate-800">사우디아라비아 어학연수</h4>
-                            <p class="text-blue-600 text-sm font-semibold">아랍어 집중 과정</p>
-                            <p class="text-[11px] text-slate-400 mt-1">2026.03 예정 (2개월)</p>
-                        </div>
+            <section class="md:col-span-1 bento-card space-y-6" data-aos="fade-right">
+                <h3 class="text-xl font-black flex items-center gap-2">
+                    <span class="w-2 h-6 bg-slate-800 rounded-full"></span> EDUCATION
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-bold text-slate-800">한국외국어대학교</h4>
+                        <p class="text-blue-600 text-sm font-semibold">국제학부 (IS)</p>
+                        <p class="text-[11px] text-slate-400 mt-1">2023.03 - PRESENT</p>
                     </div>
                 </div>
             </section>
 
-            <section id="skill" class="md:col-span-2 bento-card space-y-6" data-aos="fade-up" data-aos-delay="100">
+            <section id="activities" class="md:col-span-2 bento-card space-y-6" data-aos="fade-left">
                 <h3 class="text-xl font-black flex items-center gap-2">
-                    <span class="w-2 h-6 bg-slate-900 rounded-full"></span> CAPABILITY & TOOLS
+                    <span class="w-2 h-6 bg-blue-600 rounded-full"></span> EXTRACURRICULAR
                 </h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                        <p class="text-xs font-bold text-slate-400 mb-3 uppercase tracking-tighter">Languages</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-white border rounded-lg text-sm font-bold text-blue-600 shadow-sm">Arabic (KAM)</span>
-                            <span class="px-3 py-1 bg-white border rounded-lg text-sm font-bold text-slate-700 shadow-sm">Chinese</span>
-                            <span class="px-3 py-1 bg-white border rounded-lg text-sm font-bold text-slate-700 shadow-sm">Vietnamese</span>
-                        </div>
+                        <span class="px-2 py-1 bg-purple-100 text-purple-700 text-[10px] font-black rounded-sm mb-2 inline-block">AMBASSADOR</span>
+                        <h4 class="font-bold text-slate-800 mb-1">OOO 대학생 앰버서더</h4>
+                        <p class="text-xs text-slate-500 mb-2">2025.XX - 2025.XX</p>
+                        <p class="text-sm text-slate-600">브랜드 가치를 알리는 온라인 콘텐츠 기획 및 프로모션 참여</p>
                     </div>
                     <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                        <p class="text-xs font-bold text-slate-400 mb-3 uppercase tracking-tighter">Digital & Creative</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-slate-900 text-white rounded-lg text-sm font-bold shadow-sm">React / Next.js</span>
-                            <span class="px-3 py-1 bg-slate-900 text-white rounded-lg text-sm font-bold shadow-sm">AI Studio / Vibe Coding</span>
-                            <span class="px-3 py-1 bg-slate-900 text-white rounded-lg text-sm font-bold shadow-sm">Premiere / CapCut</span>
-                        </div>
+                        <span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-sm mb-2 inline-block">SUPPORTERS</span>
+                        <h4 class="font-bold text-slate-800 mb-1">OOO 서포터즈 활동</h4>
+                        <p class="text-xs text-slate-500 mb-2">2024.XX - 2024.XX</p>
+                        <p class="text-sm text-slate-600">글로벌 문화 교류 행사 지원 및 오프라인 캠페인 운영</p>
                     </div>
-                </div>
-            </section>
-
-            <section id="work" class="md:col-span-3 bento-card" data-aos="fade-up">
-                <h3 class="text-2xl font-black flex items-center gap-2 mb-8">
-                    <span class="w-2 h-8 bg-blue-600 rounded-full"></span> SELECTED EXPERIENCE
-                </h3>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    
-                    <div class="group p-6 bg-slate-50 rounded-3xl border border-slate-100 hover:border-blue-300 hover:bg-white transition-all flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between mb-4">
-                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full uppercase">Planning & Dev</span>
-                            </div>
-                            <h4 class="text-lg font-black mb-2 group-hover:text-blue-600 transition">KAM Project</h4>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                한국인 학습자에게 최적화된 아랍어 학습법 고안. AI 툴과 웹 프레임워크를 활용해 디지털 아카이빙 사이트를 직접 기획 및 구축했습니다.
-                            </p>
-                        </div>
-                        <a href="https://kam-project-link.com" target="_blank" class="self-start inline-flex items-center gap-1 text-xs font-bold text-blue-600 bg-blue-50 px-4 py-2 rounded-full hover:bg-blue-100 transition">
-                            Visit Website ↗
-                        </a>
-                    </div>
-
-                    <div class="group p-6 bg-slate-50 rounded-3xl border border-slate-100 hover:border-red-300 hover:bg-white transition-all flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between mb-4">
-                                <span class="px-3 py-1 bg-red-100 text-red-700 text-[10px] font-black rounded-full uppercase">Content Creator</span>
-                            </div>
-                            <h4 class="text-lg font-black mb-2 group-hover:text-red-500 transition">Xiaohongshu (샤오홍슈)</h4>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                중국 현지 유저를 타겟으로 글로벌 라이프스타일 및 여행 콘텐츠를 기획/제작하며, 글로벌 플랫폼에서의 실전 마케팅과 소통 능력을 길렀습니다.
-                            </p>
-                        </div>
-                        <a href="https://xiaohongshu-link.com" target="_blank" class="self-start inline-flex items-center gap-1 text-xs font-bold text-red-500 bg-red-50 px-4 py-2 rounded-full hover:bg-red-100 transition">
-                            View Profile ↗
-                        </a>
-                    </div>
-
-                    <div class="group p-6 bg-slate-50 rounded-3xl border border-slate-100 hover:border-emerald-300 hover:bg-white transition-all flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between mb-4">
-                                <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-[10px] font-black rounded-full uppercase">Global Immersion</span>
-                            </div>
-                            <h4 class="text-lg font-black mb-2 group-hover:text-emerald-600 transition">Field Exploration</h4>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                칭다오, 다롄 등 중국 현지 탐방을 통해 문화적 통찰력을 넓히고 언어 능력을 실전에 적용하는 등 적극적인 글로벌 인사이트를 쌓고 있습니다.
-                            </p>
-                        </div>
-                        <span class="self-start inline-flex items-center gap-1 text-xs font-bold text-emerald-600 bg-emerald-50 px-4 py-2 rounded-full">
-                            🌍 Active
-                        </span>
-                    </div>
-
                 </div>
             </section>
         </div>
 
+        <section id="projects" class="bento-card" data-aos="fade-up">
+            <h3 class="text-2xl font-black flex items-center gap-2 mb-8">
+                <span class="w-2 h-8 bg-blue-600 rounded-full"></span> PROJECTS & OUTCOMES
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="group p-6 border-2 border-slate-100 rounded-3xl hover:border-blue-400 transition flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-xl font-black mb-2 text-slate-800 group-hover:text-blue-600 transition">KAM Project (웹 아카이빙)</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            한국인 학습자에게 최적화된 아랍어 학습법(KAM)을 고안하고, 이를 누구나 쉽게 접근할 수 있도록 AI 툴과 Next.js/Vercel을 활용해 직접 웹사이트로 구축했습니다.
+                        </p>
+                        <div class="flex gap-2 mb-6">
+                            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-bold">Web Dev</span>
+                            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-bold">UI/UX</span>
+                        </div>
+                    </div>
+                    <a href="#" class="text-sm font-bold text-blue-600 hover:text-blue-800">→ Visit Website</a>
+                </div>
+
+                <div class="group p-6 border-2 border-slate-100 rounded-3xl hover:border-red-400 transition flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-xl font-black mb-2 text-slate-800 group-hover:text-red-500 transition">Xiaohongshu 글로벌 콘텐츠</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            중국 현지 유저를 타겟으로 트렌디한 라이프스타일 및 여행 숏폼 영상(CapCut, Premiere 활용)을 제작하여 플랫폼 내 반응을 이끌어내고 소통합니다.
+                        </p>
+                        <div class="flex gap-2 mb-6">
+                            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-bold">Content</span>
+                            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-bold">Video Editing</span>
+                        </div>
+                    </div>
+                    <a href="#" class="text-sm font-bold text-red-500 hover:text-red-700">→ View Profile</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="special" class="bento-card bg-slate-900 text-white border-none" data-aos="fade-up">
+            <h3 class="text-2xl font-black flex items-center gap-2 mb-8 text-white">
+                <span class="w-2 h-8 bg-blue-500 rounded-full"></span> SPECIAL POINT
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-3">
+                    <div class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center text-2xl mb-4">🌍</div>
+                    <h4 class="font-bold text-lg text-blue-400">경계를 넘는 실행력</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        낯선 환경에 던져지는 것을 즐깁니다. 중국 현지 탐방은 물론, 다가올 사우디아라비아 어학연수 등 새로운 문화권에 직접 부딪히며 현장의 언어와 글로벌 감각을 체득합니다.
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <div class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center text-2xl mb-4">✍️</div>
+                    <h4 class="font-bold text-lg text-purple-400">집요한 기록의 힘</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        6공 바인더를 활용해 매일의 아이디어와 인사이트를 꼼꼼하게 저널링합니다. 흩어진 생각들을 모아 기획안으로 만들고, 이를 웹사이트나 영상 콘텐츠라는 결과물로 발전시키는 데 탁월합니다.
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <div class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center text-2xl mb-4">💻</div>
+                    <h4 class="font-bold text-lg text-emerald-400">문과생의 IT 무기</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        국제학 전공 지식에 웹 개발 능력(React, Vercel)과 디자인 툴 활용력을 더했습니다. 아이디어를 외주에 의존하지 않고 직접 프로토타입으로 구현해낼 수 있는 융합형 인재입니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="py-12 text-center text-slate-400 text-[10px] font-bold tracking-widest uppercase border-t border-slate-200 mt-10">
+    <footer class="py-10 text-center text-slate-400 text-[10px] font-bold tracking-widest uppercase border-t border-slate-200">
         Designed & Coded by Minseo Park © 2026
     </footer>
 
