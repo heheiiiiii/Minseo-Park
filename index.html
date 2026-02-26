@@ -3,129 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minseo Park | Portfolio</title>
+    <title>Minseo Park | Archive</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <style>
-        body { font-family: 'Pretendard', sans-serif; word-break: keep-all; }
-        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); }
-        /* 모바일에서 글자가 너무 커지지 않도록 조정 */
-        @media (max-width: 640px) {
-            .mobile-title { font-size: 2rem !important; }
-        }
+        body { font-family: 'Pretendard', sans-serif; word-break: keep-all; background-color: #f8fafc; }
+        .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); }
+        .section-card { background: white; border: 1px solid #e2e8f0; border-radius: 1.5rem; padding: 2.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 leading-relaxed">
+<body class="text-slate-900">
 
-    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-200">
-        <div class="max-w-4xl mx-auto px-5 py-4 flex justify-between items-center">
-            <span class="font-bold text-lg tracking-tighter text-blue-600">MINSEO.P</span>
-            <div class="flex gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-slate-500 overflow-x-auto">
-                <a href="#about" class="whitespace-nowrap hover:text-blue-600">About</a>
-                <a href="#edu" class="whitespace-nowrap hover:text-blue-600">Education</a>
-                <a href="#work" class="whitespace-nowrap hover:text-blue-600">Activities</a>
+    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-100">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-black text-xl tracking-tighter text-slate-800">MINSEO.P</span>
+            <div class="hidden md:flex gap-8 text-sm font-bold text-slate-400">
+                <a href="#about" class="hover:text-blue-600 transition">PROFILE</a>
+                <a href="#edu" class="hover:text-blue-600 transition">EDUCATION</a>
+                <a href="#work" class="hover:text-blue-600 transition">PROJECTS</a>
+                <a href="#skill" class="hover:text-blue-600 transition">CAPABILITY</a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-6 pt-24 pb-20">
+    <main class="max-w-5xl mx-auto px-6 pt-32 pb-20 space-y-12">
         
-        <section id="about" class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 mb-20" data-aos="fade-up">
-            <div class="w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden shadow-lg flex-shrink-0 rotate-3">
-                <img src="your-photo.jpg" alt="박민서" class="w-full h-full object-cover">
+        <section id="about" class="section-card flex flex-col md:flex-row items-center md:items-end justify-between gap-10" data-aos="fade-up">
+            <div class="w-48 h-60 md:w-64 md:h-80 bg-slate-200 rounded-2xl overflow-hidden shadow-2xl flex-shrink-0">
+                <img src="your-photo.jpeg" alt="박민서" class="w-full h-full object-cover">
             </div>
             
-            <div class="flex-1 text-center md:text-left">
-                <h1 class="mobile-title text-4xl md:text-5xl font-black mb-3 tracking-tight">박민서</h1>
-                <p class="text-lg md:text-xl font-medium text-slate-500 mb-6">HUFS International Studies</p>
+            <div class="flex-1 w-full text-right">
+                <h2 class="text-slate-400 font-bold tracking-widest text-sm mb-2">INTERNATIONAL STUDIES & WEB</h2>
+                <h1 class="text-5xl md:text-6xl font-black mb-6 tracking-tighter text-slate-900">박민서</h1>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 text-sm text-slate-600 border-t pt-6 inline-block md:flex md:flex-wrap">
-                    <div class="flex items-center gap-2 justify-center md:justify-start">
-                        <span class="w-5 text-center">📅</span> 2004. 08. 23
-                    </div>
-                    <div class="flex items-center gap-2 justify-center md:justify-start">
-                        <span class="w-5 text-center">📞</span> 010-XXXX-XXXX
-                    </div>
-                    <div class="flex items-center gap-2 justify-center md:justify-start">
-                        <span class="w-5 text-center">📧</span> your-email@gmail.com
-                    </div>
-                    <div class="flex items-center gap-2 justify-center md:justify-start">
-                        <span class="w-5 text-center">📍</span> Seoul, Korea
-                    </div>
+                <div class="space-y-2 text-slate-500 font-medium">
+                    <p class="flex justify-end items-center gap-2">2004. 08. 23 <span class="text-slate-300">|</span> BIRTH</p>
+                    <p class="flex justify-end items-center gap-2">010-XXXX-XXXX <span class="text-slate-300">|</span> CONTACT</p>
+                    <p class="flex justify-end items-center gap-2">your-email@gmail.com <span class="text-slate-300">|</span> EMAIL</p>
+                    <p class="flex justify-end items-center gap-2 text-blue-600 underline">github.com/heheiiiiii <span class="text-slate-300">|</span> GITHUB</p>
+                    <p class="flex justify-end items-center gap-2">Seoul / Gyeonggi-do <span class="text-slate-300">|</span> LOCATION</p>
                 </div>
             </div>
         </section>
 
-        <section class="mb-20" data-aos="fade-up">
-            <div class="bg-blue-600 p-8 md:p-10 rounded-[2rem] text-white shadow-xl shadow-blue-100">
-                <h2 class="text-xl font-bold mb-4">Introduce</h2>
-                <p class="text-base md:text-lg leading-relaxed opacity-90">
-                    국제학을 전공하며 세계를 잇는 <strong>콘텐츠 기획자이자 개발자</strong>를 꿈꿉니다. 
-                    단순한 정보 전달을 넘어 기술을 통해 사용자에게 새로운 경험을 선사하는 일에 가치를 둡니다.
-                </p>
-            </div>
+        <section class="section-card border-l-8 border-l-blue-600" data-aos="fade-up">
+            <h3 class="text-blue-600 font-black mb-4 tracking-tight">INTRODUCE</h3>
+            <p class="text-xl md:text-2xl font-bold leading-snug text-slate-800">
+                "국제학의 시각으로 세상을 읽고, <br class="hidden md:block">
+                기술의 언어로 가치를 구축합니다."
+            </p>
+            <p class="mt-6 text-slate-500 leading-relaxed">
+                한국외국어대학교 국제학부에서 세계 정치와 문화를 전공하고 있습니다. 
+                전공에서 얻은 통찰력을 바탕으로, 아랍어 학습법 개발(KAM Project) 등 
+                언어와 기술이 결합된 창의적인 솔루션을 제안하는 것을 즐깁니다.
+            </p>
         </section>
 
-        <section id="edu" class="mb-20" data-aos="fade-up">
-            <h2 class="text-2xl font-black mb-8 flex items-center gap-2">
-                <span class="w-8 h-1 bg-blue-600 rounded-full"></span> Education
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <section id="edu" class="space-y-6" data-aos="fade-right">
+                <h2 class="text-2xl font-black flex items-center gap-3">
+                    <span class="p-2 bg-slate-900 text-white rounded-lg text-xs">01</span> EDUCATION
+                </h2>
+                <div class="space-y-4">
+                    <div class="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-lg">한국외국어대학교 (HUFS)</h4>
+                        <p class="text-blue-600 text-sm font-semibold">국제학부 (International Studies)</p>
+                        <p class="text-xs text-slate-400 mt-2">2023.03 - PRESENT</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-800">고등학교 졸업</h4>
+                        <p class="text-xs text-slate-400 mt-1">2020.03 - 2023.02</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skill" class="space-y-6" data-aos="fade-left">
+                <h2 class="text-2xl font-black flex items-center gap-3">
+                    <span class="p-2 bg-slate-900 text-white rounded-lg text-xs">02</span> CAPABILITY
+                </h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-bold border border-blue-100">🇸🇦 Arabic (KAM Project)</span>
+                    <span class="px-4 py-2 bg-slate-50 text-slate-700 rounded-full text-sm font-bold border border-slate-100">🇨🇳 Chinese</span>
+                    <span class="px-4 py-2 bg-slate-50 text-slate-700 rounded-full text-sm font-bold border border-slate-100">🇻🇳 Vietnamese</span>
+                    <span class="px-4 py-2 bg-slate-900 text-white rounded-full text-sm font-bold">📽️ Video Editing</span>
+                    <span class="px-4 py-2 bg-slate-900 text-white rounded-full text-sm font-bold">💻 Web Dev (React/Vercel)</span>
+                </div>
+            </section>
+        </div>
+
+        <section id="work" class="section-card" data-aos="fade-up">
+            <h2 class="text-2xl font-black mb-10 flex items-center gap-3 text-center justify-center">
+                SELECTED EXPERIENCE
             </h2>
-            <div class="space-y-6">
-                <div class="flex flex-col sm:flex-row sm:justify-between border-b pb-4">
-                    <div>
-                        <h3 class="font-bold text-lg text-slate-800">한국외국어대학교</h3>
-                        <p class="text-slate-500">국제학부 (International Studies)</p>
-                    </div>
-                    <span class="text-sm text-blue-600 font-semibold mt-1 sm:mt-0">2023.03 - 현재</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div class="group">
+                    <h3 class="text-lg font-black group-hover:text-blue-600 transition">KAM Project Development</h3>
+                    <p class="text-sm text-slate-500 mt-2">한국인 학습자에게 최적화된 아랍어 학습법 고안 및 디지털 아카이빙 사이트 구축 운영.</p>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:justify-between border-b pb-4">
-                    <div>
-                        <h3 class="font-bold text-slate-800 text-base">OO고등학교 졸업</h3>
-                    </div>
-                    <span class="text-sm text-slate-400 mt-1 sm:mt-0">2020.03 - 2023.02</span>
+                <div class="group">
+                    <h3 class="text-lg font-black group-hover:text-blue-600 transition">Xiaohongshu Content Creation</h3>
+                    <p class="text-sm text-slate-500 mt-2">중국 소셜 플랫폼 내 글로벌 라이프스타일 콘텐츠 기획 및 영상 제작을 통한 사용자 소통.</p>
                 </div>
-            </div>
-        </section>
-
-        <section id="skills" class="mb-20" data-aos="fade-up">
-            <h2 class="text-2xl font-black mb-8 flex items-center gap-2">
-                <span class="w-8 h-1 bg-blue-600 rounded-full"></span> Capabilities
-            </h2>
-            <div class="flex flex-wrap gap-3">
-                <span class="px-4 py-2 bg-white border rounded-xl text-sm font-semibold shadow-sm text-slate-700">📽️ 영상 촬영/편집</span>
-                <span class="px-4 py-2 bg-white border rounded-xl text-sm font-semibold shadow-sm text-slate-700">💻 Web Development</span>
-                <span class="px-4 py-2 bg-white border rounded-xl text-sm font-semibold shadow-sm text-slate-700">🇸🇦 Arabic</span>
-                <span class="px-4 py-2 bg-white border rounded-xl text-sm font-semibold shadow-sm text-slate-700">🇨🇳 Chinese</span>
-                <span class="px-4 py-2 bg-white border rounded-xl text-sm font-semibold shadow-sm text-slate-700">🇻🇳 Vietnamese</span>
-            </div>
-        </section>
-
-        <section id="work" class="mb-20" data-aos="fade-up">
-            <h2 class="text-2xl font-black mb-8 flex items-center gap-2">
-                <span class="w-8 h-1 bg-blue-600 rounded-full"></span> Experience
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="p-6 bg-white border rounded-[1.5rem] hover:shadow-lg transition">
-                    <h3 class="font-bold text-blue-600 mb-2">KAM Project</h3>
-                    <p class="text-sm text-slate-500 leading-snug">한국인 맞춤형 아랍어 학습법 개발 및 디지털 아카이빙 사이트 구축</p>
-                </div>
-                <div class="p-6 bg-white border rounded-[1.5rem] hover:shadow-lg transition">
-                    <h3 class="font-bold text-blue-600 mb-2">Xiaohongshu Content</h3>
-                    <p class="text-sm text-slate-500 leading-snug">글로벌 라이프스타일 크리에이터 활동 및 중국 사용자 소통</p>
+                <div class="group">
+                    <h3 class="text-lg font-black group-hover:text-blue-600 transition">Cultural Content Research</h3>
+                    <p class="text-sm text-slate-500 mt-2">영화 및 게임 산업 등 글로벌 문화 콘텐츠 비즈니스 모델 분석 및 학술 프로젝트 수행.</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="py-10 text-center text-slate-400 text-xs border-t">
-        © 2026 Park Min-seo. All rights reserved.
+    <footer class="py-12 text-center text-slate-400 text-xs font-bold tracking-widest">
+        DESIGNED BY MINSEO PARK © 2026
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+        AOS.init({ duration: 1000, once: true, offset: 50 });
     </script>
 </body>
 </html>
