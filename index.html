@@ -8,25 +8,42 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <style>
-        body { font-family: 'Pretendard', sans-serif; word-break: keep-all; background-color: #f1f5f9; }
-        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); }
-        .bento-card { background: white; border-radius: 2rem; padding: 2.5rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; }
-        .bento-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        body { font-family: 'Pretendard', sans-serif; word-break: keep-all; background-color: #f8fafc; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
+        .bento-card { background: white; border-radius: 1.5rem; padding: 2rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; }
+        .bento-card:hover { box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05); }
         html { scroll-behavior: smooth; }
-        .nav-link { position: relative; padding: 0.5rem 0; }
-        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #2563eb; transition: width 0.3s; }
+        .nav-link { position: relative; padding: 0.5rem 0; color: #64748b; font-weight: 700; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #4f46e5; transition: width 0.3s; }
+        .nav-link:hover { color: #1e293b; }
         .nav-link:hover::after { width: 100%; }
-        .gradient-text { background: linear-gradient(90deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* 산뜻한 형광펜 강조 효과 */
+        .highlight { background: linear-gradient(180deg, rgba(255,255,255,0) 60%, #c7d2fe 40%); display: inline; }
     </style>
 </head>
-<body class="text-slate-900 leading-relaxed">
+<body class="text-slate-800 leading-relaxed">
 
-    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-200">
+    <div id="welcome-popup" class="fixed inset-0 z-[100] bg-slate-900/40 backdrop-blur-md flex justify-center items-center transition-opacity duration-500">
+        <div class="bg-white p-8 rounded-[2rem] shadow-2xl text-center max-w-sm mx-4 transform transition-transform scale-100">
+            <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-6 border-4 border-indigo-50 shadow-inner">
+                <img src="greeting.gif" alt="Hello!" class="w-full h-full object-cover">
+            </div>
+            <h2 class="text-2xl font-extrabold text-indigo-600 mb-2">안녕하세요! 박민서입니다.</h2>
+            <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                국제학의 시각과 기술의 언어로<br>세상을 연결하는 포트폴리오에 오신 것을 환영합니다.
+            </p>
+            <button onclick="closePopup()" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition-colors shadow-md shadow-indigo-200">
+                포트폴리오 보기 ✨
+            </button>
+        </div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-100 shadow-sm">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="font-black text-xl tracking-tighter text-blue-600">MINSEO.P</span>
-            <div class="flex gap-4 md:gap-8 text-xs md:text-sm font-bold text-slate-500 overflow-x-auto whitespace-nowrap pb-2 md:pb-0">
-                <a href="#about" class="nav-link text-slate-800">ABOUT</a>
-                <a href="#activities" class="nav-link">ACTIVITIES</a>
+            <span class="font-extrabold text-xl tracking-tighter text-indigo-600">MINSEO.P</span>
+            <div class="flex gap-6 text-xs sm:text-sm overflow-x-auto whitespace-nowrap">
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#identity" class="nav-link">IDENTITY</a>
                 <a href="#projects" class="nav-link">PROJECTS</a>
                 <a href="#special" class="nav-link">SPECIAL</a>
             </div>
@@ -36,144 +53,147 @@
     <main class="max-w-6xl mx-auto px-6 pt-32 pb-20 space-y-8">
         
         <section class="bento-card flex flex-col md:flex-row items-center md:items-start gap-10" data-aos="fade-up">
-            <div class="w-48 h-60 md:w-64 md:h-80 bg-slate-200 rounded-3xl overflow-hidden shadow-xl flex-shrink-0">
+            <div class="w-48 h-60 md:w-64 md:h-80 bg-slate-100 rounded-3xl overflow-hidden shadow-lg flex-shrink-0">
                 <img src="your-photo.jpeg" alt="박민서" class="w-full h-full object-cover">
             </div>
             <div class="flex-1 w-full text-left">
-                <h2 class="text-blue-600 font-bold tracking-widest text-sm mb-2">INTERNATIONAL STUDIES & WEB CREATOR</h2>
-                <h1 class="text-5xl md:text-6xl font-black mb-6 tracking-tighter text-slate-900">박민서</h1>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 text-slate-500 font-medium border-t pt-6">
-                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Birth</span> 2004. 08. 23</p>
-                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Contact</span> 010-XXXX-XXXX</p>
-                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Email</span> your-email@gmail.com</p>
-                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Location</span> Seoul / Gyeonggi-do</p>
-                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Github</span> <a href="https://github.com/heheiiiiii" target="_blank" class="text-blue-600 hover:underline">@heheiiiiii</a></p>
-                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Blog</span> <a href="#" target="_blank" class="text-blue-600 hover:underline">@민서님의블로그</a></p>
-                    <p class="flex items-center gap-3"><span class="w-20 text-slate-400 text-xs font-bold uppercase">Xiaohongshu</span> <a href="#" target="_blank" class="text-red-500 hover:underline">@샤오홍슈ID</a></p>
+                <h2 class="text-indigo-600 font-bold tracking-widest text-sm mb-2">GLOBAL STRATEGIST & WEB CREATOR</h2>
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-slate-800">박민서</h1>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 text-slate-600 font-medium border-t border-slate-100 pt-6 text-sm">
+                    <p class="flex items-center gap-3"><span class="w-20 text-indigo-400 font-bold uppercase">Birth</span> 2004. 08. 23</p>
+                    <p class="flex items-center gap-3"><span class="w-20 text-indigo-400 font-bold uppercase">Contact</span> 010-XXXX-XXXX</p>
+                    <p class="flex items-center gap-3"><span class="w-20 text-indigo-400 font-bold uppercase">Email</span> your-email@gmail.com</p>
+                    <p class="flex items-center gap-3"><span class="w-20 text-indigo-400 font-bold uppercase">Location</span> Seoul / Gyeonggi-do</p>
+                    <p class="flex items-center gap-3"><span class="w-20 text-indigo-400 font-bold uppercase">Github</span> <a href="https://github.com/heheiiiiii" target="_blank" class="text-indigo-600 hover:underline">@heheiiiiii</a></p>
+                    <p class="flex items-center gap-3"><span class="w-20 text-indigo-400 font-bold uppercase">Blog</span> <a href="#" target="_blank" class="text-indigo-600 hover:underline">@블로그링크</a></p>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="bento-card border-l-8 border-l-blue-600" data-aos="fade-up">
-            <h3 class="text-sm font-black text-slate-400 mb-2 tracking-widest uppercase">Introduce</h3>
-            <p class="text-2xl md:text-3xl font-bold leading-snug text-slate-800 mb-4">
-                "국제학의 시각으로 세상을 읽고, <span class="gradient-text">기술의 언어로 가치를 구축합니다.</span>"
-            </p>
-            <p class="text-slate-600 leading-relaxed text-lg">
-                단순히 언어를 배우는 것을 넘어, 서로 다른 문화를 연결하고 정보를 효율적으로 전달하는 기획자를 꿈꿉니다. 
-                사람들의 니즈를 파악해 아이디어를 내고, 이를 웹사이트나 콘텐츠라는 실체 있는 결과물로 만들어내는 과정에 가장 큰 흥미를 느낍니다. 
-                글로벌 마인드와 트렌디한 디지털 툴 활용 능력을 바탕으로 언제나 창의적인 솔루션을 제안하겠습니다.
-            </p>
+        <section id="identity" class="grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up">
+            <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-6 text-center shadow-sm">
+                <h3 class="text-3xl font-extrabold text-indigo-600 mb-1">3+</h3>
+                <p class="text-sm font-bold text-slate-600">글로벌 커뮤니케이션<br><span class="text-xs font-normal text-slate-500">(아랍어, 중국어, 베트남어)</span></p>
+            </div>
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl p-6 text-center shadow-sm">
+                <h3 class="text-3xl font-extrabold text-blue-600 mb-1">Web</h3>
+                <p class="text-sm font-bold text-slate-600">직접 구현하는 아이디어<br><span class="text-xs font-normal text-slate-500">(React, Next.js, Vercel)</span></p>
+            </div>
+            <div class="bg-violet-50 border border-violet-100 rounded-2xl p-6 text-center shadow-sm">
+                <h3 class="text-3xl font-extrabold text-violet-600 mb-1">Content</h3>
+                <p class="text-sm font-bold text-slate-600">트렌디한 시각적 스토리텔링<br><span class="text-xs font-normal text-slate-500">(Xiaohongshu, Video Editing)</span></p>
+            </div>
         </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <section class="md:col-span-1 bento-card space-y-6" data-aos="fade-right">
-                <h3 class="text-xl font-black flex items-center gap-2">
-                    <span class="w-2 h-6 bg-slate-800 rounded-full"></span> EDUCATION
-                </h3>
-                <div class="space-y-4">
-                    <div>
-                        <h4 class="font-bold text-slate-800">한국외국어대학교</h4>
-                        <p class="text-blue-600 text-sm font-semibold">국제학부 (IS)</p>
-                        <p class="text-[11px] text-slate-400 mt-1">2023.03 - PRESENT</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="activities" class="md:col-span-2 bento-card space-y-6" data-aos="fade-left">
-                <h3 class="text-xl font-black flex items-center gap-2">
-                    <span class="w-2 h-6 bg-blue-600 rounded-full"></span> EXTRACURRICULAR
-                </h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                        <span class="px-2 py-1 bg-purple-100 text-purple-700 text-[10px] font-black rounded-sm mb-2 inline-block">AMBASSADOR</span>
-                        <h4 class="font-bold text-slate-800 mb-1">OOO 대학생 앰버서더</h4>
-                        <p class="text-xs text-slate-500 mb-2">2025.XX - 2025.XX</p>
-                        <p class="text-sm text-slate-600">브랜드 가치를 알리는 온라인 콘텐츠 기획 및 프로모션 참여</p>
-                    </div>
-                    <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                        <span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-sm mb-2 inline-block">SUPPORTERS</span>
-                        <h4 class="font-bold text-slate-800 mb-1">OOO 서포터즈 활동</h4>
-                        <p class="text-xs text-slate-500 mb-2">2024.XX - 2024.XX</p>
-                        <p class="text-sm text-slate-600">글로벌 문화 교류 행사 지원 및 오프라인 캠페인 운영</p>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <section id="about" class="bento-card border-l-4 border-l-indigo-500" data-aos="fade-up">
+            <h3 class="text-sm font-bold text-indigo-400 mb-3 tracking-widest uppercase">Introduce</h3>
+            <p class="text-2xl md:text-3xl font-extrabold leading-tight text-slate-800 mb-5">
+                "문화를 잇는 기획력, <br class="md:hidden"><span class="highlight">실체로 만드는 기술력</span>"
+            </p>
+            <p class="text-slate-600 leading-relaxed">
+                단순히 아이디어에 머무는 것을 넘어, 사람들의 니즈를 분석하고 이를 웹사이트나 영상 콘텐츠라는 
+                <span class="font-bold text-indigo-600">실체 있는 결과물</span>로 만들어내는 과정에 가장 큰 흥미를 느낍니다. 
+                글로벌 마인드와 트렌디한 디지털 툴 활용 능력을 바탕으로, 언제나 사용자를 설득할 수 있는 창의적인 솔루션을 제안하겠습니다.
+            </p>
+        </section>
 
         <section id="projects" class="bento-card" data-aos="fade-up">
-            <h3 class="text-2xl font-black flex items-center gap-2 mb-8">
-                <span class="w-2 h-8 bg-blue-600 rounded-full"></span> PROJECTS & OUTCOMES
+            <h3 class="text-xl font-extrabold flex items-center gap-2 mb-8 text-slate-800">
+                <span class="w-1.5 h-6 bg-indigo-500 rounded-full"></span> PROJECTS & OUTCOMES
             </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="group p-6 border-2 border-slate-100 rounded-3xl hover:border-blue-400 transition flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-xl font-black mb-2 text-slate-800 group-hover:text-blue-600 transition">KAM Project (웹 아카이빙)</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            한국인 학습자에게 최적화된 아랍어 학습법(KAM)을 고안하고, 이를 누구나 쉽게 접근할 수 있도록 AI 툴과 Next.js/Vercel을 활용해 직접 웹사이트로 구축했습니다.
-                        </p>
-                        <div class="flex gap-2 mb-6">
-                            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-bold">Web Dev</span>
-                            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-bold">UI/UX</span>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="group border border-slate-200 rounded-[2rem] hover:border-indigo-300 transition-all overflow-hidden flex flex-col bg-white">
+                    <div class="w-full aspect-video bg-slate-100 overflow-hidden relative">
+                        <img src="kam-thumbnail.jpg" alt="KAM Project" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                     </div>
-                    <a href="#" class="text-sm font-bold text-blue-600 hover:text-blue-800">→ Visit Website</a>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h4 class="text-lg font-bold mb-2 text-slate-800">KAM Project (학습 아카이빙 웹)</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-1">
+                            한국인 학습자에게 최적화된 아랍어 학습법(KAM) 고안. 누구나 쉽게 접근할 수 있도록 AI 툴과 Next.js를 활용해 웹사이트를 직접 구축했습니다.
+                        </p>
+                        <a href="#" target="_blank" class="text-center py-2.5 bg-indigo-50 text-indigo-600 font-bold text-sm rounded-xl hover:bg-indigo-600 hover:text-white transition-colors">
+                            웹사이트 바로가기 ↗
+                        </a>
+                    </div>
                 </div>
 
-                <div class="group p-6 border-2 border-slate-100 rounded-3xl hover:border-red-400 transition flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-xl font-black mb-2 text-slate-800 group-hover:text-red-500 transition">Xiaohongshu 글로벌 콘텐츠</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            중국 현지 유저를 타겟으로 트렌디한 라이프스타일 및 여행 숏폼 영상(CapCut, Premiere 활용)을 제작하여 플랫폼 내 반응을 이끌어내고 소통합니다.
-                        </p>
-                        <div class="flex gap-2 mb-6">
-                            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-bold">Content</span>
-                            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-bold">Video Editing</span>
-                        </div>
+                <div class="group border border-slate-200 rounded-[2rem] hover:border-indigo-300 transition-all overflow-hidden flex flex-col bg-white">
+                    <div class="w-full aspect-video bg-slate-100 overflow-hidden relative">
+                        <img src="xhs-thumbnail.jpg" alt="Xiaohongshu" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                     </div>
-                    <a href="#" class="text-sm font-bold text-red-500 hover:text-red-700">→ View Profile</a>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h4 class="text-lg font-bold mb-2 text-slate-800">샤오홍슈(Xiaohongshu) 콘텐츠 기획</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-1">
+                            중국 현지 유저를 타겟으로 트렌디한 라이프스타일 및 여행 숏폼 영상을 기획/제작하며, 글로벌 플랫폼 내 실전 마케팅 감각을 길렀습니다.
+                        </p>
+                        <a href="#" target="_blank" class="text-center py-2.5 bg-rose-50 text-rose-600 font-bold text-sm rounded-xl hover:bg-rose-500 hover:text-white transition-colors">
+                            콘텐츠 프로필 보기 ↗
+                        </a>
+                    </div>
                 </div>
+
             </div>
         </section>
 
-        <section id="special" class="bento-card bg-slate-900 text-white border-none" data-aos="fade-up">
-            <h3 class="text-2xl font-black flex items-center gap-2 mb-8 text-white">
-                <span class="w-2 h-8 bg-blue-500 rounded-full"></span> SPECIAL POINT
+        <section id="special" class="bento-card bg-indigo-900 border-none" data-aos="fade-up">
+            <h3 class="text-xl font-extrabold flex items-center gap-2 mb-8 text-white">
+                <span class="w-1.5 h-6 bg-indigo-400 rounded-full"></span> SPECIAL POINT
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="space-y-3">
-                    <div class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center text-2xl mb-4">🌍</div>
-                    <h4 class="font-bold text-lg text-blue-400">경계를 넘는 실행력</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        낯선 환경에 던져지는 것을 즐깁니다. 중국 현지 탐방은 물론, 다가올 사우디아라비아 어학연수 등 새로운 문화권에 직접 부딪히며 현장의 언어와 글로벌 감각을 체득합니다.
+                
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-indigo-800 rounded-xl flex items-center justify-center text-indigo-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-lg text-indigo-100">경계를 넘는 실행력</h4>
+                    <p class="text-sm text-indigo-200/80 leading-relaxed">
+                        낯선 환경을 즐깁니다. 중국 칭다오, 다롄 등 현지 탐방과 사우디아라비아 어학연수 등 새로운 문화권에 부딪히며 현장 감각을 체득합니다.
                     </p>
                 </div>
-                <div class="space-y-3">
-                    <div class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center text-2xl mb-4">✍️</div>
-                    <h4 class="font-bold text-lg text-purple-400">집요한 기록의 힘</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        6공 바인더를 활용해 매일의 아이디어와 인사이트를 꼼꼼하게 저널링합니다. 흩어진 생각들을 모아 기획안으로 만들고, 이를 웹사이트나 영상 콘텐츠라는 결과물로 발전시키는 데 탁월합니다.
+
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-indigo-800 rounded-xl flex items-center justify-center text-indigo-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-lg text-indigo-100">집요한 기록의 힘</h4>
+                    <p class="text-sm text-indigo-200/80 leading-relaxed">
+                        6공 바인더를 활용해 인사이트를 저널링합니다. 흩어진 생각들을 모아 기획안으로 만들고, 이를 실체 있는 결과물로 발전시키는 데 탁월합니다.
                     </p>
                 </div>
-                <div class="space-y-3">
-                    <div class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center text-2xl mb-4">💻</div>
-                    <h4 class="font-bold text-lg text-emerald-400">문과생의 IT 무기</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        국제학 전공 지식에 웹 개발 능력(React, Vercel)과 디자인 툴 활용력을 더했습니다. 아이디어를 외주에 의존하지 않고 직접 프로토타입으로 구현해낼 수 있는 융합형 인재입니다.
+
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-indigo-800 rounded-xl flex items-center justify-center text-indigo-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-lg text-indigo-100">문과생의 IT 무기</h4>
+                    <p class="text-sm text-indigo-200/80 leading-relaxed">
+                        국제학 전공 지식에 웹 개발 능력과 디자인 툴 활용력을 더했습니다. 외주에 의존하지 않고 아이디어를 직접 프로토타입으로 구현하는 융합 인재입니다.
                     </p>
                 </div>
+
             </div>
         </section>
 
     </main>
 
-    <footer class="py-10 text-center text-slate-400 text-[10px] font-bold tracking-widest uppercase border-t border-slate-200">
+    <footer class="py-10 text-center text-slate-400 text-xs font-bold tracking-widest uppercase border-t border-slate-100">
         Designed & Coded by Minseo Park © 2026
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 50 });
+
+        // 팝업 닫기 함수
+        function closePopup() {
+            const popup = document.getElementById('welcome-popup');
+            popup.style.opacity = '0';
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 500); // fade-out 시간
+        }
     </script>
 </body>
 </html>
