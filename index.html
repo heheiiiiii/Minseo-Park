@@ -3,212 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minseo's Travel Resume ✈️</title>
+    <title>Minseo Park | Global Host</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     
     <style>
-        /* 폰트 및 배경 설정 (따뜻한 종이 질감 느낌의 컬러) */
-        body { font-family: 'Pretendard', sans-serif; background-color: #fffaf0; color: #4a4a4a; overflow-x: hidden; }
-        h1, h2, h3, .cute-font { font-family: 'Jua', sans-serif; }
+        body { font-family: 'Pretendard', sans-serif; word-break: keep-all; background-color: #fafaf9; overflow-x: hidden; color: #292524; }
         
-        /* 통통 튀는 애니메이션들 */
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(2deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
-        }
-        @keyframes fly {
-            0% { transform: translateX(-10px) translateY(10px); }
-            50% { transform: translateX(10px) translateY(-10px); }
-            100% { transform: translateX(-10px) translateY(10px); }
-        }
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(-3deg); }
-            50% { transform: rotate(3deg); }
-        }
+        /* 세련된 무한 흐름 텍스트 (Marquee) */
+        .marquee-wrapper { width: 100vw; overflow: hidden; white-space: nowrap; background: #ea580c; color: white; padding: 0.75rem 0; transform: rotate(-2deg) scale(1.05); position: relative; z-index: 10; }
+        .marquee { display: inline-block; animation: marquee 20s linear infinite; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
-        /* 커스텀 클래스 */
-        .floating { animation: float 3s ease-in-out infinite; }
-        .flying { animation: fly 4s ease-in-out infinite; }
-        .wiggling:hover { animation: wiggle 0.5s ease-in-out infinite; }
+        /* 고급스러운 카드 인터랙션 */
+        .modern-card { background: white; border-radius: 2rem; border: 1px solid #f5f5f4; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .modern-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(234, 88, 12, 0.08); border-color: #ffedd5; }
         
-        /* 폴라로이드 사진 효과 */
-        .polaroid {
-            background: white;
-            padding: 1rem 1rem 3rem 1rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-radius: 4px;
-            transform: rotate(-3deg);
-            transition: transform 0.3s;
-        }
-        .polaroid:hover { transform: rotate(1deg) scale(1.05); z-index: 10; }
-        
-        /* 마스킹 테이프 효과 */
-        .tape {
-            position: absolute; width: 100px; height: 30px; 
-            background-color: rgba(255, 235, 133, 0.7); 
-            top: -10px; left: 50%; transform: translateX(-50%) rotate(-2deg);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); z-index: 10;
-        }
+        /* 이미지 부드러운 스케일링 */
+        .img-zoom { overflow: hidden; border-radius: 2rem; }
+        .img-zoom img { transition: transform 0.7s ease; }
+        .modern-card:hover .img-zoom img { transform: scale(1.05); }
 
-        /* 스크랩북 카드 */
-        .scrap-card {
-            background: white; border-radius: 1.5rem; padding: 1.5rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-            border: 2px dashed #fcd34d; position: relative;
-            transition: all 0.3s;
-        }
-        .scrap-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.08); }
+        /* 네비게이션 효과 */
+        .nav-glass { background: rgba(250, 250, 249, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid #f5f5f4; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="text-gray-700">
+<body class="antialiased">
 
-    <div id="welcome-popup" class="fixed inset-0 z-[100] bg-yellow-50/90 backdrop-blur-sm flex justify-center items-center transition-opacity duration-500">
-        <div class="bg-white p-8 rounded-[2.5rem] shadow-2xl border-4 border-yellow-200 text-center w-[85%] max-w-sm mx-auto transform transition-transform scale-100 relative">
-            <div class="absolute -top-6 -right-4 text-5xl flying">✈️</div>
-            <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-4 border-yellow-300 shadow-inner">
-                <img src="greeting.gif" alt="Hi!" class="w-full h-full object-cover">
+    <div id="welcome-popup" class="fixed inset-0 z-[100] bg-stone-900/40 backdrop-blur-sm flex justify-center items-center transition-opacity duration-500">
+        <div class="bg-white p-8 rounded-[2rem] shadow-2xl text-center w-[90%] max-w-sm mx-auto transform transition-transform scale-100">
+            <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-6 shadow-sm border border-stone-100">
+                <img src="greeting.gif" alt="Hi" class="w-full h-full object-cover">
             </div>
-            <h2 class="cute-font text-3xl text-orange-500 mb-2">Hola! (안녕하세요!)</h2>
-            <p class="text-gray-600 text-sm mb-6 leading-relaxed font-medium">
-                게스트하우스에 기분 좋은 활기를 불어넣을<br>준비된 호스트, 박민서입니다 🎒
+            <h2 class="text-2xl font-black text-stone-800 mb-2">HOLA! 박민서입니다.</h2>
+            <p class="text-stone-500 text-sm mb-8 leading-relaxed font-medium">
+                에너지 넘치고 센스 있는 글로벌 호스트,<br>포트폴리오에 오신 것을 환영합니다.
             </p>
-            <button onclick="closePopup()" class="w-full py-3 bg-orange-400 hover:bg-orange-500 text-white font-bold rounded-2xl transition-colors shadow-lg shadow-orange-200 text-lg cute-font">
-                티켓 확인하기 🎫
+            <button onclick="closePopup()" class="w-full py-4 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-xl transition-colors tracking-wide text-sm">
+                입장하기
             </button>
         </div>
     </div>
 
-    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-yellow-100">
-        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <span class="cute-font text-2xl text-orange-500 flying flex items-center gap-1">✈️ Minseo</span>
-            <div class="flex gap-4 text-sm font-bold text-gray-500">
-                <a href="#about" class="hover:text-orange-500 transition">About</a>
-                <a href="#charm" class="hover:text-orange-500 transition">Charm</a>
-                <a href="#travel" class="hover:text-orange-500 transition">Travel</a>
+    <nav class="fixed top-0 w-full z-50 nav-glass">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-black text-xl tracking-tighter text-orange-600">MINSEO.P</span>
+            <div class="flex gap-6 text-xs font-bold text-stone-400 uppercase tracking-wider">
+                <a href="#about" class="hover:text-stone-800 transition">About</a>
+                <a href="#vibe" class="hover:text-stone-800 transition">Vibe</a>
+                <a href="#experience" class="hover:text-stone-800 transition">Experience</a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-5 pt-28 pb-20 space-y-12">
+    <div class="mt-24 marquee-wrapper shadow-sm">
+        <div class="marquee text-sm md:text-base">
+            <span>READY TO HOST IN BARCELONA ✨ GLOBAL COMMUNICATOR ✨ CONTENT CREATOR ✨ PROBLEM SOLVER ✨ ENERGY BOOSTER ✨ </span>
+            <span>READY TO HOST IN BARCELONA ✨ GLOBAL COMMUNICATOR ✨ CONTENT CREATOR ✨ PROBLEM SOLVER ✨ ENERGY BOOSTER ✨ </span>
+        </div>
+    </div>
+
+    <main class="max-w-5xl mx-auto px-6 pt-16 pb-24 space-y-16">
         
-        <section id="about" class="flex flex-col md:flex-row items-center gap-8 md:gap-12" data-aos="zoom-in">
-            <div class="relative w-48 sm:w-56 floating mx-auto md:mx-0">
-                <div class="tape"></div>
-                <div class="polaroid">
-                    <img src="your-photo.jpeg" alt="박민서" class="w-full aspect-square object-cover rounded bg-gray-100">
-                    <p class="cute-font text-center text-xl mt-4 text-gray-600">Traveler. Minseo 📸</p>
+        <section id="about" class="flex flex-col md:flex-row items-center gap-10 md:gap-16" data-aos="fade-up">
+            <div class="w-full md:w-5/12 modern-card p-2 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                <div class="img-zoom aspect-[4/5] bg-stone-100">
+                    <img src="your-photo.jpeg" alt="박민서" class="w-full h-full object-cover">
                 </div>
             </div>
             
-            <div class="flex-1 text-center md:text-left">
-                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-bold mb-3 inline-block">Global Guest House Staff 지원</span>
-                <h1 class="cute-font text-4xl sm:text-5xl text-gray-800 mb-4 leading-tight">
-                    "세계 곳곳의 친구들을 맞이할<br><span class="text-orange-500 text-5xl sm:text-6xl">준비된 호스트</span>입니다!"
+            <div class="w-full md:w-7/12 flex flex-col justify-center">
+                <span class="text-orange-600 font-bold tracking-widest text-xs mb-4 uppercase">Guest House Staff Candidate</span>
+                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-[1.1] tracking-tight text-stone-800">
+                    문화를 잇고<br>
+                    <span class="text-stone-400">추억을 기획하는</span><br>
+                    글로벌 호스트
                 </h1>
-                <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-6 bg-white p-4 rounded-2xl border border-gray-100 shadow-sm inline-block text-left">
-                    여행을 사랑하는 한국외대 국제학부 대학생입니다.<br>
-                    낯선 여행지에서 만난 다정한 스태프 한 명이 여행의 기억을 얼마나 따뜻하게 만드는지 잘 알기에, 저 또한 <b>게스트들에게 가장 기분 좋은 추억의 한 조각</b>이 되고 싶습니다.
+                <p class="text-stone-500 leading-relaxed mb-8 text-sm md:text-base max-w-lg font-medium">
+                    여행을 사랑하는 한국외대 국제학부 재학생입니다. 낯선 여행지에서 만난 다정한 스태프 한 명이 여행의 온도를 바꾸듯, 저 또한 전 세계 게스트들에게 가장 기분 좋은 추억의 한 조각이 되고 싶습니다.
                 </p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-2 text-xs font-bold">
-                    <span class="px-3 py-1.5 bg-orange-50 text-orange-600 rounded-xl border border-orange-100 wiggling cursor-default">🎂 04년생 (에너지 만땅)</span>
-                    <span class="px-3 py-1.5 bg-blue-50 text-blue-600 rounded-xl border border-blue-100 wiggling cursor-default">🇰🇷 한국외대 국제학부</span>
-                    <a href="https://instagram.com" target="_blank" class="px-3 py-1.5 bg-pink-50 text-pink-600 rounded-xl border border-pink-100 hover:bg-pink-100 transition">📱 인스타그램 @아이디</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="charm" data-aos="fade-up">
-            <h2 class="cute-font text-3xl text-center mb-8 flex justify-center items-center gap-2">
-                🌟 저를 꼭 뽑아야 하는 이유 3가지!
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 
-                <div class="scrap-card text-center group">
-                    <div class="text-5xl mb-4 group-hover:scale-125 transition duration-300 transform inline-block">🗣️</div>
-                    <h3 class="cute-font text-xl text-orange-600 mb-2">다국어 패치 장착</h3>
-                    <p class="text-xs text-gray-500 font-bold mb-2 bg-gray-100 rounded-full py-1 inline-block px-3">아랍어 / 중국어 / 베트남어</p>
-                    <p class="text-sm text-gray-600 leading-relaxed">
-                        전 세계 어디서 온 게스트라도 두렵지 않습니다! 다양한 언어와 문화에 대한 호기심으로 글로벌 게스트들과 빠르게 친해집니다.
-                    </p>
-                </div>
-
-                <div class="scrap-card text-center group border-pink-300">
-                    <div class="text-5xl mb-4 group-hover:scale-125 transition duration-300 transform inline-block">📸</div>
-                    <h3 class="cute-font text-xl text-pink-500 mb-2">홍보 마케팅 요정</h3>
-                    <p class="text-xs text-gray-500 font-bold mb-2 bg-gray-100 rounded-full py-1 inline-block px-3">샤오홍슈 크리에이터 / 영상 편집</p>
-                    <p class="text-sm text-gray-600 leading-relaxed">
-                        게하의 예쁜 공간과 재밌는 일상을 트렌디한 숏폼 콘텐츠(릴스 등)로 뚝딱 만들어냅니다. 우리 게하 홍보는 저에게 맡겨주세요!
-                    </p>
-                </div>
-
-                <div class="scrap-card text-center group border-blue-300">
-                    <div class="text-5xl mb-4 group-hover:scale-125 transition duration-300 transform inline-block">🧹</div>
-                    <h3 class="cute-font text-xl text-blue-500 mb-2">싹싹한 서비스 요정</h3>
-                    <p class="text-xs text-gray-500 font-bold mb-2 bg-gray-100 rounded-full py-1 inline-block px-3">매장 알바 및 서포터즈 경험</p>
-                    <p class="text-sm text-gray-600 leading-relaxed">
-                        바쁜 매장 알바 경험으로 다져진 눈치와 멀티태스킹! 청소부터 고객 응대까지, 시키지 않아도 먼저 움직이는 부지런함이 무기입니다.
-                    </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-stone-100 text-stone-600 rounded-full text-xs font-bold border border-stone-200">🎂 2004 (22세)</span>
+                    <span class="px-4 py-2 bg-stone-100 text-stone-600 rounded-full text-xs font-bold border border-stone-200">🇰🇷 한국외대 국제학부</span>
+                    <a href="#" class="px-4 py-2 bg-orange-50 text-orange-600 hover:bg-orange-600 hover:text-white transition-colors rounded-full text-xs font-bold border border-orange-100">📱 @Instagram</a>
                 </div>
             </div>
         </section>
 
-        <section id="travel" class="bg-white p-6 sm:p-10 rounded-[2rem] shadow-sm border-2 border-dashed border-gray-200" data-aos="fade-up">
-            <h2 class="cute-font text-2xl sm:text-3xl text-gray-800 mb-6 border-b-2 border-yellow-200 pb-2 flex items-center gap-2">
-                🛂 Minseo's Travel & Experience
-            </h2>
+        <section id="vibe" data-aos="fade-up">
+            <div class="flex items-center gap-4 mb-10">
+                <div class="h-px bg-stone-200 flex-1"></div>
+                <h2 class="text-lg font-black tracking-widest uppercase text-stone-800">Why Minseo?</h2>
+                <div class="h-px bg-stone-200 flex-1"></div>
+            </div>
             
-            <div class="space-y-6">
-                <div class="flex items-start gap-4 p-4 hover:bg-yellow-50 rounded-xl transition cursor-default">
-                    <div class="text-3xl bg-yellow-100 p-3 rounded-full w-14 h-14 flex items-center justify-center">☕</div>
-                    <div>
-                        <h4 class="font-bold text-gray-800 text-lg">서비스 및 고객 응대 스태프 (알바)</h4>
-                        <p class="text-xs text-orange-500 font-bold mb-1">202X.XX - 202X.XX</p>
-                        <p class="text-sm text-gray-600">
-                            다양한 손님을 맞이하며 싹싹한 미소와 대처 능력을 길렀습니다. 매장을 항상 청결하게 관리하는 습관이 몸에 배어 있습니다.
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="modern-card p-8 group">
+                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:-translate-y-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-stone-800 mb-3">다국어 패치 장착</h3>
+                    <p class="text-sm text-stone-500 leading-relaxed font-medium">
+                        아랍어, 중국어, 베트남어 등 다국어 소통 능력을 갖췄습니다. 다양한 국적의 게스트들과 문화적 장벽 없이 빠르게 친해집니다.
+                    </p>
+                </div>
+
+                <div class="modern-card p-8 group">
+                    <div class="w-12 h-12 bg-stone-100 text-stone-600 rounded-xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:-translate-y-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-stone-800 mb-3">홍보 콘텐츠 메이커</h3>
+                    <p class="text-sm text-stone-500 leading-relaxed font-medium">
+                        샤오홍슈 크리에이터 및 웹 개발 경험을 살려, 게스트하우스의 일상과 공간의 매력을 트렌디한 숏폼 콘텐츠로 뚝딱 만들어냅니다.
+                    </p>
+                </div>
+
+                <div class="modern-card p-8 group">
+                    <div class="w-12 h-12 bg-orange-600 text-white rounded-xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:-translate-y-2 shadow-lg shadow-orange-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-stone-800 mb-3">프로페셔널 서비스</h3>
+                    <p class="text-sm text-stone-500 leading-relaxed font-medium">
+                        바쁜 매장 알바로 다져진 눈치와 멀티태스킹 능력! 청결 관리부터 고객 응대까지 시키지 않아도 먼저 찾아 움직이는 실행력이 무기입니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="modern-card p-8 md:p-12" data-aos="fade-up">
+            <h2 class="text-2xl font-black text-stone-800 mb-10">Global & Work Experience</h2>
+            
+            <div class="space-y-8">
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 group">
+                    <div class="w-full md:w-1/4 text-sm font-bold text-orange-600 md:text-right pt-1">202X.XX - 202X.XX</div>
+                    <div class="w-full md:w-3/4 border-l-2 border-stone-100 pl-6 pb-6 group-hover:border-orange-400 transition-colors">
+                        <h4 class="text-lg font-black text-stone-800 mb-2">고객 응대 및 매장 스태프</h4>
+                        <p class="text-sm text-stone-500 leading-relaxed font-medium">
+                            다양한 성향의 손님을 맞이하며 싹싹한 미소와 대처 능력을 길렀습니다. 매장을 항상 쾌적하고 청결하게 관리하는 서비스업의 기본기를 다졌습니다.
                         </p>
                     </div>
                 </div>
 
-                <div class="flex items-start gap-4 p-4 hover:bg-sky-50 rounded-xl transition cursor-default">
-                    <div class="text-3xl bg-sky-100 p-3 rounded-full w-14 h-14 flex items-center justify-center">🌏</div>
-                    <div>
-                        <h4 class="font-bold text-gray-800 text-lg">프로 배낭러의 시선 (해외 탐방)</h4>
-                        <p class="text-xs text-blue-500 font-bold mb-1">중국(칭다오, 다롄), 베트남, 사우디아라비아(예정) 등</p>
-                        <p class="text-sm text-gray-600">
-                            여행자가 낯선 곳에서 무엇을 필요로 하는지 누구보다 잘 이해합니다. 게스트들의 마음을 헤아리는 따뜻한 호스팅을 약속합니다.
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 group">
+                    <div class="w-full md:w-1/4 text-sm font-bold text-orange-600 md:text-right pt-1">2025.11 - 현재</div>
+                    <div class="w-full md:w-3/4 border-l-2 border-stone-100 pl-6 pb-6 group-hover:border-orange-400 transition-colors">
+                        <h4 class="text-lg font-black text-stone-800 mb-2">글로벌 인사이트 탐방</h4>
+                        <p class="text-sm text-stone-500 leading-relaxed font-medium">
+                            중국(칭다오, 다롄), 베트남 탐방 및 사우디 어학연수(예정) 등 다양한 문화권의 여행자가 낯선 곳에서 무엇을 필요로 하는지 깊이 이해하고 있습니다.
                         </p>
                     </div>
                 </div>
 
-                <div class="flex items-start gap-4 p-4 hover:bg-green-50 rounded-xl transition cursor-default">
-                    <div class="text-3xl bg-green-100 p-3 rounded-full w-14 h-14 flex items-center justify-center">💻</div>
-                    <div>
-                        <h4 class="font-bold text-gray-800 text-lg">기록하고 실행하는 꼼꼼함</h4>
-                        <p class="text-xs text-green-500 font-bold mb-1">웹사이트 직접 제작 및 다이어리 저널링</p>
-                        <p class="text-sm text-gray-600">
-                            스스로 아랍어 학습 웹사이트(KAM Project)를 만들 정도로 실행력과 꼼꼼함이 뛰어납니다. 게하의 예약 장부나 시스템도 완벽하게 관리할 수 있어요!
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 group">
+                    <div class="w-full md:w-1/4 text-sm font-bold text-orange-600 md:text-right pt-1">2024 - 2025</div>
+                    <div class="w-full md:w-3/4 border-l-2 border-stone-100 pl-6 group-hover:border-orange-400 transition-colors">
+                        <h4 class="text-lg font-black text-stone-800 mb-2">브랜드 앰버서더 및 기획</h4>
+                        <p class="text-sm text-stone-500 leading-relaxed font-medium">
+                            프로젝트 기획 및 온오프라인 캠페인을 주도하며 책임감을 증명했습니다. 게스트하우스의 작은 이벤트나 파티 기획에도 적극적으로 기여할 수 있습니다.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section data-aos="zoom-in" class="mt-12">
-            <div class="bg-gradient-to-r from-orange-400 to-yellow-400 p-1 rounded-3xl shadow-xl transform rotate-1 hover:rotate-0 transition duration-300">
-                <div class="bg-white rounded-[1.3rem] p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-dashed border-2 border-orange-200">
-                    <div class="text-center sm:text-left">
-                        <h3 class="cute-font text-2xl text-orange-500 mb-1">Boarding Pass to Your Guesthouse! 🎫</h3>
-                        <p class="text-sm text-gray-500 font-bold">언제든 연락주세요. 바로 짐 싸서 날아가겠습니다!</p>
-                    </div>
-                    <div class="flex flex-col gap-2 w-full sm:w-auto">
-                        <a href="mailto:your-email@gmail.com" class="px-6 py-2 bg-gray-100 hover:bg-orange-50 text-gray-700 font-bold rounded-full text-sm text-center transition flex items-center justify-center gap-2">
-                            📧 your-email@gmail.com
+        <section data-aos="fade-up" class="text-center pt-8">
+            <div class="bg-stone-900 text-white p-10 md:p-16 rounded-[3rem] shadow-2xl relative overflow-hidden group">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-stone-800 rounded-full transition-transform duration-700 group-hover:scale-150"></div>
+                
+                <div class="relative z-10">
+                    <h3 class="text-3xl md:text-4xl font-black mb-4 tracking-tight">Ready to Check-in! 🧳</h3>
+                    <p class="text-stone-400 font-medium mb-10 max-w-md mx-auto">
+                        밝은 에너지로 공간을 채울 준비가 되어있습니다.<br>궁금한 점이 있으시다면 언제든 연락해 주세요!
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="mailto:your-email@gmail.com" class="px-8 py-4 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-full transition-all flex items-center justify-center gap-2 text-sm tracking-wide">
+                            이메일 보내기
                         </a>
-                        <span class="px-6 py-2 bg-gray-100 text-gray-700 font-bold rounded-full text-sm text-center flex items-center justify-center gap-2">
+                        <span class="px-8 py-4 bg-stone-800 border border-stone-700 text-white font-bold rounded-full flex items-center justify-center gap-2 text-sm tracking-wide">
                             📞 010-XXXX-XXXX
                         </span>
                     </div>
@@ -218,8 +192,8 @@
 
     </main>
 
-    <footer class="py-8 text-center text-gray-400 text-xs font-bold mt-8">
-        Made with ♥ by Minseo Park
+    <footer class="py-10 text-center text-stone-400 text-xs font-bold uppercase tracking-widest mt-10">
+        Designed by Minseo Park © 2026
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
